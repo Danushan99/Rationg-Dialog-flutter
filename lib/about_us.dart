@@ -8,7 +8,13 @@ class AboutUsPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        child: Column(),
+        child: Column(
+          children: const [
+            FlutterLogo(
+              size: 100.0,
+            )
+          ],
+        ),
       )),
     );
   }
