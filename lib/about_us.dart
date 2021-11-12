@@ -26,7 +26,7 @@ class AboutUsPage extends StatelessWidget {
                 icon: Icon(Icons.star),
                 label: Text(
                   "Rate Us",
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.headline6,
                 ))
           ],
         ),
