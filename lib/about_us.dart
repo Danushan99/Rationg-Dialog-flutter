@@ -45,8 +45,8 @@ class AboutUsPage extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) {
-          return Dialog(
-            child: const RatingView(),
+          return const Dialog(
+            child: RatingView(),
           );
         });
   }
