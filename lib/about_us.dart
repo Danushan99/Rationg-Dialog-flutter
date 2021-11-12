@@ -16,7 +16,7 @@ class AboutUsPage extends StatelessWidget {
                 size: 100.0,
               ),
               Text(
-                'Review Page',
+                'Review Our App',
                 style: Theme.of(context).textTheme.headline4,
               ),
               const Spacer(),
@@ -36,5 +36,15 @@ class AboutUsPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  openRatiogDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            child: Container(),
+          );
+        });
   }
 }
