@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rationg_dialog/rating_view.dart';
 
 class AboutUsPage extends StatelessWidget {
   const AboutUsPage({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class AboutUsPage extends StatelessWidget {
         context: context,
         builder: (context) {
           return Dialog(
-            child: Container(),
+            child: const RatingView(),
           );
         });
   }
