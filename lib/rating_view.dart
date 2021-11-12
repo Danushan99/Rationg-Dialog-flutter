@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class RatingView extends StatefulWidget {
@@ -10,6 +12,15 @@ class RatingView extends StatefulWidget {
 class _RatingViewState extends State<RatingView> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Stack(
+        children: [
+          Container(
+            height: max(300, MediaQuery.of(context).size.height * 0.3),
+            child: PageView(),
+          )
+        ],
+      ),
+    );
   }
 }
