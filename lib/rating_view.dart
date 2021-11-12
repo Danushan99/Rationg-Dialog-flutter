@@ -10,6 +10,6 @@ class RatingView extends StatefulWidget {
 class _RatingViewState extends State<RatingView> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return RatingView();
   }
 }
