@@ -32,17 +32,26 @@ class _RatingViewState extends State<RatingView> {
               ],
             ),
           ),
+          //thanks note
           Positioned(
-              bottom: 0,
-              left: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.red,
+              child: MaterialButton(
+                onPressed: () {},
+                child: Text('Done'),
+                textColor: Colors.white,
+              ),
+            ),
+          ),
+          //skip button
+          Positioned(
               right: 0,
-              child: Container(
-                color: Colors.red,
-                child: MaterialButton(
-                  onPressed: () {},
-                  child: Text('Done'),
-                  textColor: Colors.white,
-                ),
+              child: MaterialButton(
+                onPressed: () {},
+                child: Text("Skip"),
               ))
         ],
       ),
@@ -51,6 +60,8 @@ class _RatingViewState extends State<RatingView> {
 
   _buildThanksNote() {
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: const [
         Text(
           "Thanks For Choosing Us",
