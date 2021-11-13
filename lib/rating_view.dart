@@ -15,6 +15,10 @@ class _RatingViewState extends State<RatingView> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(24),
+      ),
+      clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
           Container(
@@ -27,7 +31,19 @@ class _RatingViewState extends State<RatingView> {
                 _causeOfRationg(),
               ],
             ),
-          )
+          ),
+          Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.red,
+                child: MaterialButton(
+                  onPressed: () {},
+                  child: Text('Done'),
+                  textColor: Colors.white,
+                ),
+              ))
         ],
       ),
     );
