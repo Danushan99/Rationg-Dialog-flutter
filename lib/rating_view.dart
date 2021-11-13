@@ -11,6 +11,7 @@ class RatingView extends StatefulWidget {
 
 class _RatingViewState extends State<RatingView> {
   final _ratingPageController = PageController();
+  var _startPotitions = 200.0;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,6 @@ class _RatingViewState extends State<RatingView> {
           //skip button
           Positioned(
             right: 0,
-            left: 240,
             child: MaterialButton(
               onPressed: () {},
               child: Text("Skip"),
@@ -57,6 +57,7 @@ class _RatingViewState extends State<RatingView> {
           ),
           //star animation
           AnimatedPositioned(
+              top: _startPotitions,
               left: 0,
               right: 20,
               child: Row(
@@ -64,7 +65,11 @@ class _RatingViewState extends State<RatingView> {
                 children: List.generate(
                     5,
                     (index) => IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            _startPotitions = 20.0;
+                          });
+                        },
                         icon: const Icon(
                           Icons.star,
                           size: 30,
