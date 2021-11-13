@@ -48,11 +48,30 @@ class _RatingViewState extends State<RatingView> {
           ),
           //skip button
           Positioned(
-              right: 0,
-              child: MaterialButton(
-                onPressed: () {},
-                child: Text("Skip"),
-              ))
+            right: 0,
+            left: 240,
+            child: MaterialButton(
+              onPressed: () {},
+              child: Text("Skip"),
+            ),
+          ),
+          //star animation
+          AnimatedPositioned(
+              left: 0,
+              right: 20,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                    5,
+                    (index) => IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.star,
+                          size: 30,
+                          color: Colors.red,
+                        ))),
+              ),
+              duration: const Duration(milliseconds: 300))
         ],
       ),
     );
