@@ -11,10 +11,15 @@ class RatingView extends StatefulWidget {
 
 class _RatingViewState extends State<RatingView> {
   final _ratingPageController = PageController();
+  var _startPotitions = 200.0;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(24),
+      ),
+      clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
           Container(
@@ -27,7 +32,51 @@ class _RatingViewState extends State<RatingView> {
                 _causeOfRationg(),
               ],
             ),
-          )
+          ),
+          //thanks note
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.red,
+              child: MaterialButton(
+                onPressed: () {},
+                child: Text('Done'),
+                textColor: Colors.white,
+              ),
+            ),
+          ),
+          //skip button
+          Positioned(
+            right: 0,
+            child: MaterialButton(
+              onPressed: () {},
+              child: Text("Skip"),
+            ),
+          ),
+          //star animation
+          AnimatedPositioned(
+              top: _startPotitions,
+              left: 0,
+              right: 20,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                    5,
+                    (index) => IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _startPotitions = 20.0;
+                          });
+                        },
+                        icon: const Icon(
+                          Icons.star,
+                          size: 30,
+                          color: Colors.red,
+                        ))),
+              ),
+              duration: const Duration(milliseconds: 300))
         ],
       ),
     );
@@ -35,6 +84,8 @@ class _RatingViewState extends State<RatingView> {
 
   _buildThanksNote() {
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: const [
         Text(
           "Thanks For Choosing Us",
