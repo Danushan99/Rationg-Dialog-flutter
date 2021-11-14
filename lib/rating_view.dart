@@ -23,6 +23,7 @@ class _RatingViewState extends State<RatingView> {
       clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
+          // ignore: sized_box_for_whitespace
           Container(
             height: max(300, MediaQuery.of(context).size.height * 0.3),
             child: PageView(
