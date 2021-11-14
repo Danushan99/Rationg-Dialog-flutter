@@ -12,6 +12,7 @@ class RatingView extends StatefulWidget {
 class _RatingViewState extends State<RatingView> {
   final _ratingPageController = PageController();
   var _startPotitions = 200.0;
+  var _rating = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class _RatingViewState extends State<RatingView> {
       clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
+          // ignore: sized_box_for_whitespace
           Container(
             height: max(300, MediaQuery.of(context).size.height * 0.3),
             child: PageView(
@@ -42,7 +44,7 @@ class _RatingViewState extends State<RatingView> {
               color: Colors.red,
               child: MaterialButton(
                 onPressed: () {},
-                child: Text('Done'),
+                child: const Text('Done'),
                 textColor: Colors.white,
               ),
             ),
@@ -52,7 +54,7 @@ class _RatingViewState extends State<RatingView> {
             right: 0,
             child: MaterialButton(
               onPressed: () {},
-              child: Text("Skip"),
+              child: const Text("Skip"),
             ),
           ),
           //star animation
@@ -67,14 +69,21 @@ class _RatingViewState extends State<RatingView> {
                     (index) => IconButton(
                         onPressed: () {
                           setState(() {
-                            _startPotitions = 20.0;
+                            _startPotitions = 45.0;
+                            _rating = index + 1;
                           });
                         },
-                        icon: const Icon(
-                          Icons.star,
-                          size: 30,
-                          color: Colors.red,
-                        ))),
+                        icon: index < _rating
+                            ? const Icon(
+                                Icons.star,
+                                size: 32,
+                                color: Colors.red,
+                              )
+                            : const Icon(
+                                Icons.star_border,
+                                color: Colors.red,
+                                size: 32,
+                              ))),
               ),
               duration: const Duration(milliseconds: 300))
         ],
@@ -97,7 +106,7 @@ class _RatingViewState extends State<RatingView> {
           textAlign: TextAlign.center,
         ),
         Text('We\'d love to get your feedback'),
-        Text('How was your ride today'),
+        Text('How was your Usage today'),
       ],
     );
   }
