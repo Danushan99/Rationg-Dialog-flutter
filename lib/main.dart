@@ -14,11 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Review App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          dialogTheme: DialogTheme(
-              backgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24)))),
+        primarySwatch: Colors.blue,
+        dialogTheme: DialogTheme(
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24))),
+      ),
       home: const AboutUsPage(),
     );
   }

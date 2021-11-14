@@ -24,7 +24,7 @@ class _RatingViewState extends State<RatingView> {
       child: Stack(
         children: [
           Container(
-            height: max(350, MediaQuery.of(context).size.height * 0.3),
+            height: max(300, MediaQuery.of(context).size.height * 0.3),
             child: PageView(
               controller: _ratingPageController,
               physics: const NeverScrollableScrollPhysics(),
